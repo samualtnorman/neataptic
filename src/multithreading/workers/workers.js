@@ -2,14 +2,5 @@
                                   WORKERS
 *******************************************************************************/
 
-var workers = {
-  node: {
-    TestWorker: require('./node/testworker')
-  },
-  browser: {
-    TestWorker: require('./browser/testworker')
-  }
-};
-
-/** Export */
-module.exports = workers;
+export * as node from "./node/testworker"
+export * as browser from "./browser/testworker"

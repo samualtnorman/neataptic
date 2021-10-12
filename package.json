@@ -1,46 +1,45 @@
 {
-  "name": "neataptic",
-  "version": "1.4.7",
-  "description": "Architecture-free neural network library with genetic algorithm implementations",
-  "main": "./src/neataptic",
-  "scripts": {
-    "test:src": "mocha test/src.js test",
-    "test:dist": "mocha test/dist.js test",
-    "build:dist": "webpack",
-    "build:docs": "cd mkdocs && mkdocs build --site-dir ../docs && cd ../",
-    "build": "npm run build:dist && npm run build:docs",
-    "deploy": "npm run build && npm run test:dist && npm publish",
-    "test:travis": "npm run build:dist && npm run test:dist"
-  },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "copy-webpack-plugin": "^4.0.1",
-    "mocha": "^3.5.3",
-    "semistandard": "*",
-    "webpack": "^3.6.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wagenaartje/neataptic.git"
-  },
-  "keywords": [
-    "neural network",
-    "machine learning",
-    "genetic algorithm",
-    "mutation",
-    "neat"
-  ],
-  "author": {
-    "name": "Thomas Wagenaar",
-    "email": "wagenaartje@protonmail.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wagenaartje/neataptic/issues",
-    "email": "wagenaartje@protonmail.com"
-  },
-  "homepage": "http://wagenaartje.github.io/neataptic/",
-  "engines": {
-    "node": ">=7.6"
-  }
+	"name": "neataptic",
+	"version": "1.4.7",
+	"description": "Architecture-free neural network library with genetic algorithm implementations",
+	"main": "index.js",
+	"scripts": {
+		"test": "mocha test/src.js test",
+		"build": "rollup -c",
+		"dev": "rollup -cw"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@rollup/plugin-node-resolve": "^13.0.5",
+		"@rollup/plugin-typescript": "^8.2.5",
+		"chai": "4.x",
+		"mocha": "9.x",
+		"rollup": "2.x",
+		"rollup-plugin-terser": "^7.0.2"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/wagenaartje/neataptic.git"
+	},
+	"keywords": [
+		"neural network",
+		"machine learning",
+		"genetic algorithm",
+		"mutation",
+		"neat"
+	],
+	"author": {
+		"name": "Thomas Wagenaar",
+		"email": "wagenaartje@protonmail.com"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/wagenaartje/neataptic/issues",
+		"email": "wagenaartje@protonmail.com"
+	},
+	"homepage": "http://wagenaartje.github.io/neataptic/",
+	"engines": {
+		"node": "^12.17 || ^13.1 || >=14"
+	},
+	"type": "module"
 }

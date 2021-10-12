@@ -4,20 +4,17 @@
 
 // https://en.wikipedia.org/wiki/Selection_(genetic_algorithm)
 
-var selection = {
-  FITNESS_PROPORTIONATE: {
-    name: 'FITNESS_PROPORTIONATE'
-  },
-  POWER: {
-    name: 'POWER',
-    power: 4
-  },
-  TOURNAMENT: {
-    name: 'TOURNAMENT',
-    size: 5,
-    probability: 0.5
-  }
-};
+export const FITNESS_PROPORTIONATE = {
+	name: "FITNESS_PROPORTIONATE"
+}
 
-/* Export */
-module.exports = selection;
+export const POWER = {
+	name: "POWER",
+	power: 4
+}
+
+export const TOURNAMENT = {
+	name: "TOURNAMENT",
+	size: 5,
+	probability: 0.5
+}

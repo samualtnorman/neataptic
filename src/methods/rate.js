@@ -3,41 +3,42 @@
 *******************************************************************************/
 
 // https://stackoverflow.com/questions/30033096/what-is-lr-policy-in-caffe/30045244
-var rate = {
-  FIXED: function () {
-    var func = function (baseRate, iteration) { return baseRate; };
-    return func;
-  },
-  STEP: function (gamma, stepSize) {
-    gamma = gamma || 0.9;
-    stepSize = stepSize || 100;
 
-    var func = function (baseRate, iteration) {
-      return baseRate * Math.pow(gamma, Math.floor(iteration / stepSize));
-    };
+export function FIXED() {
+	var func = function(baseRate, iteration) {
+		return baseRate
+	}
+	return func
+}
 
-    return func;
-  },
-  EXP: function (gamma) {
-    gamma = gamma || 0.999;
+export function STEP(gamma, stepSize) {
+	gamma = gamma || 0.9
+	stepSize = stepSize || 100
 
-    var func = function (baseRate, iteration) {
-      return baseRate * Math.pow(gamma, iteration);
-    };
+	var func = function(baseRate, iteration) {
+		return baseRate * Math.pow(gamma, Math.floor(iteration / stepSize))
+	}
 
-    return func;
-  },
-  INV: function (gamma, power) {
-    gamma = gamma || 0.001;
-    power = power || 2;
+	return func
+}
 
-    var func = function (baseRate, iteration) {
-      return baseRate * Math.pow(1 + gamma * iteration, -power);
-    };
+export function EXP(gamma) {
+	gamma = gamma || 0.999
 
-    return func;
-  }
-};
+	var func = function(baseRate, iteration) {
+		return baseRate * Math.pow(gamma, iteration)
+	}
 
-/* Export */
-module.exports = rate;
+	return func
+}
+
+export function INV(gamma, power) {
+	gamma = gamma || 0.001
+	power = power || 2
+
+	var func = function(baseRate, iteration) {
+		return baseRate * Math.pow(1 + gamma * iteration, -power)
+	}
+
+	return func
+}
